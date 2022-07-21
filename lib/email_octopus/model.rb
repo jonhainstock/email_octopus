@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 require 'email_octopus/api'
 require 'active_model/naming'
-require 'active_record/persistence'
 
 module EmailOctopus
   # Common code for model objects.
   class Model
     extend ActiveModel::Naming
-    extend ActiveRecord::Persistence
 
     # @!attribute attributes [r]
     #   @return [Hash] Attributes related to this model.
@@ -95,7 +93,7 @@ module EmailOctopus
     private
 
     def create
-      return true unless new_record?
+      return true unless !persisted?
       @api.post(base_url, to_json).success?
     end
 
