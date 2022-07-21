@@ -7,7 +7,7 @@ module EmailOctopus
   # Common code for model objects.
   class Model
     extend ActiveModel::Naming
-    extend ActiveModel::Persistence
+    extend ActiveRecord::Persistence
 
     # @!attribute attributes [r]
     #   @return [Hash] Attributes related to this model.
