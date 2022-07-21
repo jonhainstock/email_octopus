@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 require 'email_octopus/api'
 require 'active_model/naming'
-require 'active_model/validations'
+require 'active_model/persistance'
 
 module EmailOctopus
   # Common code for model objects.
   class Model
     extend ActiveModel::Naming
-    extend ActiveModel::Validations
+    extend ActiveModel::Persistance
 
     # @!attribute attributes [r]
     #   @return [Hash] Attributes related to this model.
